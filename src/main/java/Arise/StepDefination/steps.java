@@ -36,5 +36,18 @@ public class steps {
     @Then("User should get the error message")
     public void user_should_get_the_error_message() {
         System.out.println("User should get the error message");
+
+
+    }
+
+    @When("Register the account by email")
+    public void register_the_account_by_email() {
+
+        System.out.println("Registered..!!");
+    }
+    @Then("Verify the account status")
+    public void verify_the_account_status() {
+
+        System.out.println("Account status verified");
     }
 }
