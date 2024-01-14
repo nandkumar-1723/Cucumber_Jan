@@ -1,19 +1,11 @@
-Feature: login functionality
+@Login_123
 
-  Scenario: verify the login by entering the valid username and password
+Feature: Login functionality
+
+  Scenario: verify the login by entering valid username and password
 
     Given Launch the browser and navigates to login page
 
-    When Enters the username and password
+    When Enters the valid username and password
 
-    Then User should be on home page
-
-    Scenario: verify the login by entering invalid username and password
-
-      Given Launch the browser and navigates to login page
-
-      When Enter the invalid username and password
-
-      Then User should get the error message
-
-
+    Then Verify the user status

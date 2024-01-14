@@ -1,8 +1,20 @@
 package Arise.Runner;
 
+
+import io.cucumber.testng.*;
+
 /**
  * @author Nandkumar Babar
  */
-public class testRunner {
-    //TestNG.xml
+
+@CucumberOptions(
+      features = "src/test/java/Arise/Feature",
+      glue = "Arise/StepDefination",
+      monochrome = true,
+        tags = "@Login_123"
+)
+
+public class testRunner extends AbstractTestNGCucumberTests   {
+
+
 }
