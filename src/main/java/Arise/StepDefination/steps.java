@@ -1,6 +1,7 @@
 package Arise.StepDefination;
 
 import Arise.Base.*;
+import Arise.POM.*;
 import io.cucumber.java.en.*;
 
 /**
@@ -9,14 +10,11 @@ import io.cucumber.java.en.*;
 public class steps {
 
     @Given("Launch the browser and navigates to login page")
-    public void launch_the_browser_and_navigates_to_login_page() {
-        System.out.println("Browser is launching");
-
+    public void launch_the_browser_and_navigates_to_login_page() throws Exception {
         BaseTest.launchBrowser();
-
-        System.out.println("Browser is launched..!!");
-
+        new HomePage().navigatesToLoginPage();
     }
+
     @When("Enters the valid username and password")
     public void enters_the_valid_username_and_password() {
         System.out.println("Enter the credentials --> Step-2");
