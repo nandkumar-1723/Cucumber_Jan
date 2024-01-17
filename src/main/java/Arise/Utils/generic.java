@@ -15,27 +15,14 @@ public class generic {
 
     //Common tools related method.
 
-    public static void waitForElement(List<WebElement> element) throws Exception {
-
-        Function testconditionWait = i -> element.size()>0;
-        WebDriverWait wait = new WebDriverWait(BaseTest.driver, Duration.ofMinutes(2));
-        try {
-            wait.until(testconditionWait);
-        }catch (Exception e){
-            throw new Exception("Webelement is not visible after 2 min.of wait time...!!");
-        }
-    }
-
-
-    public static void action_Click(List<WebElement> elements) throws Exception {
-        waitForElement(elements);
-        elements.get(0).click();
-    }
-
-    public static void action_SendKeys(List<WebElement> elements, String value) throws Exception {
-        waitForElement(elements);
-        elements.get(0).sendKeys(value);
-
-    }
-
+//    public static void waitForElement(List<WebElement> element) throws Exception {
+//
+//        Function testconditionWait = i -> element.size()>0;
+//        WebDriverWait wait = new WebDriverWait(BaseTest.driver, Duration.ofMinutes(2));
+//        try {
+//            wait.until(testconditionWait);
+//        }catch (Exception e){
+//            throw new Exception("Webelement is not visible after 2 min.of wait time...!!");
+//        }
+//    }
 }

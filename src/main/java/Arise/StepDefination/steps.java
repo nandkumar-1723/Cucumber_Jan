@@ -11,19 +11,23 @@ public class steps {
 
     @Given("Launch the browser and navigates to login page")
     public void launch_the_browser_and_navigates_to_login_page() throws Exception {
-        BaseTest.launchBrowser();
-        new HomePage().navigatesToLoginPage();
+        HomePage hm = new HomePage();
+        hm.navigatesToLoginPage();
+
     }
 
     @When("Enters the valid username and password")
     public void enters_the_valid_username_and_password() {
-        System.out.println("Enter the credentials --> Step-2");
+        LoginPage lp = new LoginPage();
+        lp.enterCredentials("student","Password123");
+
     }
 
     @Then("Verify the user status")
-    public void verify_the_user_status() {
+    public void verify_the_user_status() throws Exception {
 
-        System.out.println("Verify the status --> Step-3");
+       HomePage hm = new HomePage();
+       hm.verifyTheLogin();
 
     }
 }

@@ -1,7 +1,9 @@
 package Arise.Runner;
 
 
+import Arise.Base.*;
 import io.cucumber.testng.*;
+import org.testng.annotations.*;
 
 /**
  * @author Nandkumar Babar
@@ -16,6 +18,17 @@ import io.cucumber.testng.*;
 
 public class testRunner extends AbstractTestNGCucumberTests   {
 
-    // NO NO
+   @BeforeClass
+    public void preCondtions(){
+       //Pre-Condtions
+       BaseTest.launchBrowser();
+   }
+
+   @AfterClass
+    public void PostCondtions() throws InterruptedException {
+       Thread.sleep(5000);
+       //Post-Condtion
+     BaseTest.driver.quit();
+   }
 
 }

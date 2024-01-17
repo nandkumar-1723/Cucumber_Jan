@@ -4,7 +4,10 @@ import Arise.Base.*;
 import Arise.Utils.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
+import org.openqa.selenium.support.ui.*;
+import org.testng.*;
 
+import java.time.*;
 import java.util.*;
 
 /**
@@ -22,6 +25,7 @@ public class HomePage extends BaseTest {
 
     @FindBy(xpath = "//a[text()='Practice']") private List<WebElement> btnPractice;
     @FindBy(xpath = "//a[text()='Test Login Page']") private List<WebElement> btnLoginPage;
+    @FindBy(xpath = "//h1[text()='Logged In Successfully']") private List<WebElement> txtLogin;
 
 
     public HomePage(){
@@ -31,8 +35,21 @@ public class HomePage extends BaseTest {
     //Methods
 
     public void navigatesToLoginPage() throws Exception {
-        generic.action_Click(btnPractice);
-        generic.action_Click(btnLoginPage);
+
+        WebDriverWait wait =new WebDriverWait(BaseTest.driver, Duration.ofMinutes(2));
+        wait.until(ExpectedConditions.visibilityOf(btnPractice.get(0))).click();
+        wait.until(ExpectedConditions.visibilityOf(btnLoginPage.get(0))).click();
+
+    }
+
+    public void verifyTheLogin() throws Exception {
+//
+//        if (!(txtLogin.size()>0)){
+//            throw new Exception("Page is not navigates on home page");
+//        }
+
+        //Common approach
+        Assert.assertEquals(txtLogin.get(0).getText(),"Logged In Successfully");
 
     }
 

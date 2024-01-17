@@ -9,3 +9,13 @@ Feature: Login functionality
     When Enters the valid username and password
 
     Then Verify the user status
+
+
+#    Assignment............
+  Scenario: verify the login by entering invalid username and invalid password
+
+    Given Launch the browser and navigates to login page
+
+    When Enters the invalid username and invalid password
+
+    Then Verify the user status
