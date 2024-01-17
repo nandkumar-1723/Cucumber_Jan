@@ -9,8 +9,8 @@ import io.cucumber.java.en.*;
  */
 public class steps {
 
-    @Given("Launch the browser and navigates to login page")
-    public void launch_the_browser_and_navigates_to_login_page() throws Exception {
+    @Given("Navigates to login page")
+    public void navigates_to_login_page() throws Exception {
         HomePage hm = new HomePage();
         hm.navigatesToLoginPage();
 

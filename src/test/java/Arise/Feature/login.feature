@@ -4,7 +4,7 @@ Feature: Login functionality
 
   Scenario: verify the login by entering valid username and password
 
-    Given Launch the browser and navigates to login page
+    Given Navigates to login page
 
     When Enters the valid username and password
 
@@ -14,7 +14,7 @@ Feature: Login functionality
 #    Assignment............
   Scenario: verify the login by entering invalid username and invalid password
 
-    Given Launch the browser and navigates to login page
+    Given Navigates to login page
 
     When Enters the invalid username and invalid password
 
