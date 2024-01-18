@@ -2,6 +2,7 @@ package Arise.StepDefination;
 
 import Arise.Base.*;
 import Arise.POM.*;
+import io.cucumber.datatable.*;
 import io.cucumber.java.en.*;
 
 /**
@@ -16,11 +17,12 @@ public class steps {
 
     }
 
-    @When("Enters the valid username and password")
-    public void enters_the_valid_username_and_password() {
+    @When("Enters the credentials")
+    public void enters_the_valid_username_and_password(DataTable dataTable) {
         LoginPage lp = new LoginPage();
-        lp.enterCredentials("student","Password123");
-
+        String username = dataTable.asMaps().get(0).get("username");
+        String password = dataTable.asMaps().get(0).get("password");
+        lp.enterCredentials(username,password);
     }
 
     @Then("Verify the user status")
@@ -28,6 +30,11 @@ public class steps {
 
        HomePage hm = new HomePage();
        hm.verifyTheLogin();
+    }
 
+    @Then("Verify the user status for wrong credentials")
+    public void verify_the_user_status_for_wrong_credentials() throws Exception {
+     LoginPage lm = new LoginPage();
+     lm.verifyTheWrongCredentials();
     }
 }

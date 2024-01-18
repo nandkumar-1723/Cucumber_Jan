@@ -6,16 +6,39 @@ Feature: Login functionality
 
     Given Navigates to login page
 
-    When Enters the valid username and password
+    When Enters the credentials
+      | username | password    |
+      | student  | Password123 |
 
     Then Verify the user status
 
+  Scenario: verify the login by entering invalid username and valid password
 
-#    Assignment............
+    Given Navigates to login page
+
+    When Enters the credentials
+      | username   | password    |
+      | student123 | Password123 |
+
+    Then Verify the user status for wrong credentials
+
+  Scenario: verify the login by entering valid username and invalid password
+
+    Given Navigates to login page
+
+    When Enters the credentials
+      | username | password |
+      | student  | Pass123  |
+
+    Then Verify the user status for wrong credentials
+
   Scenario: verify the login by entering invalid username and invalid password
 
     Given Navigates to login page
 
-    When Enters the invalid username and invalid password
+    When Enters the credentials
+      | username   | password |
+      | student123 | pass1234 |
 
-    Then Verify the user status
+    Then Verify the user status for wrong credentials
+
