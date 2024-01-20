@@ -10,14 +10,12 @@ public class BaseTest {
 
     public static WebDriver driver;
 
+    //Launch the chrome browser
     public static void launchBrowser(){
-
         ChromeOptions chrome = new ChromeOptions();
         chrome.setBrowserVersion("stable");
-//        chrome.setBrowserVersion("119");
-         driver = new ChromeDriver(chrome);
+        driver = new ChromeDriver(chrome);
         driver.get("https://practicetestautomation.com/");
         driver.manage().window().maximize();
-
     }
 }
