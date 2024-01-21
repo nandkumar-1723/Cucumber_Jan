@@ -25,9 +25,12 @@ public class Runner extends AbstractTestNGCucumberTests {
         BaseTest.launchBrowser();
     }
 
+    // It will run the feature files
+
     @AfterClass
-    public void postCondtion(){
+    public void postCondtion() throws InterruptedException {
         System.out.println("Post-Condtions (Quite browser)");
+        Thread.sleep(5000);
         BaseTest.driver.quit();
     }
 }
