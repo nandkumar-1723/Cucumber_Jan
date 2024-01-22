@@ -61,3 +61,4 @@ Feature: login functionality
     Then verify the login status
       | text                      |
       | Your username is invalid! |
+#

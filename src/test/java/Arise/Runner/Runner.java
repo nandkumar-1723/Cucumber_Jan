@@ -11,7 +11,7 @@ import org.testng.annotations.*;
 @CucumberOptions(
         features = "src/test/java/Arise/Feature", //path from repository / content root
         glue = "Arise/StepDefination", //path from source root
-        tags = "@login_99", //Tag from feature file
+        tags = "@login_outline", //Tag from feature file
         monochrome = true
 )
 
