@@ -1,13 +1,15 @@
 #Provide this tag to the runner class to run the below feature.
+@background
 @arise
-@login
 
 Feature: login functionality
 
-  Scenario: verify the login by entering valid username and valid password
+  Background: navigating to the login page
 
-#      Pre-condtions
-    Given Navigates to login page
+        Given Navigates to login page
+
+  @backgound_s1
+  Scenario: verify the login by entering valid username and valid password
 
 #      Actual action
     When Enters the credentials
@@ -20,10 +22,8 @@ Feature: login functionality
       | text                   |
       | Logged In Successfully |
 
+  @backgound_s1
   Scenario: verify the login by entering invalid username and valid password
-
-      #      Pre-condtions
-    Given Navigates to login page
 
 #      Actual action
     When Enters the credentials
@@ -36,10 +36,8 @@ Feature: login functionality
       | Your username is invalid! |
 
   Scenario: verify the login by entering valid username and invalid password
-              #      Pre-condtions
-    Given Navigates to login page
 
-#      Actual action
+  #      Actual action
     When Enters the credentials
       | username | password |
       | student  | invalid  |
@@ -50,10 +48,8 @@ Feature: login functionality
       | Your password is invalid! |
 
   Scenario: verify the login by entering invalid username and invalid password
-                  #      Pre-condtions
-    Given Navigates to login page
 
-#      Actual action
+  #      Actual action
     When Enters the credentials
       | username | password |
       | invalid  | invalid  |

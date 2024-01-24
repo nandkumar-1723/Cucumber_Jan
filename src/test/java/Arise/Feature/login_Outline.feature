@@ -1,5 +1,6 @@
 #Provide this tag to the runner class to run the below feature.
-@login_outline
+@outline
+@arise
 
 Feature: login functionality
 
@@ -12,8 +13,8 @@ Feature: login functionality
       | <username> | <password> |
 
     Then verify the login status
-      | text |
-      | <text>   |
+      | text   |
+      | <text> |
 
     Examples:
       | username | password    | text                      |
@@ -21,4 +22,7 @@ Feature: login functionality
       | invalid  | Password123 | Your username is invalid! |
       | student  | invalid     | Your password is invalid! |
       | invalid  | invalid     | Your username is invalid! |
+
+
+
 

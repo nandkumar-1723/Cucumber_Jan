@@ -11,7 +11,9 @@ import org.testng.annotations.*;
 @CucumberOptions(
         features = "src/test/java/Arise/Feature", //path from repository / content root
         glue = "Arise/StepDefination", //path from source root
-        tags = "@login_outline", //Tag from feature file
+//        tags = "@background or @login or @outline", //multiples tags from feature file
+        tags = "@login", //signle tags from feature file
+        plugin = { "pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         monochrome = true
 )
 
