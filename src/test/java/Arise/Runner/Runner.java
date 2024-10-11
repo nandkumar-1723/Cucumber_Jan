@@ -9,30 +9,26 @@ import org.testng.annotations.*;
  */
 
 @CucumberOptions(
-        features = "src/test/java/Arise/Feature", //path from repository / content root
-        glue = "Arise/StepDefination", //path from source root
-//        tags = "@background or @login or @outline", //multiples tags from feature file
-        tags = "@login", //signle tags from feature file
-        plugin = { "pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+        features = "src/test/java/Arise/Feature",
+        glue = "Arise/StepDefination",
+        tags = "@nandkumar",
         monochrome = true
 )
-
-
-// Class name could be anything
 public class Runner extends AbstractTestNGCucumberTests {
 
     @BeforeClass
-    public void preCondtion(){
-        System.out.println("Pre-condtions (Launch Browser)");
+    public void preConditions(){
+        //It will launch the browser
+        System.out.println("Launch the browser");
         BaseTest.launchBrowser();
     }
 
-    // It will run the feature files
+    // Here feature file execution will happens it depends on cucumberOptions parameters
 
     @AfterClass
-    public void postCondtion() throws InterruptedException {
-        System.out.println("Post-Condtions (Quite browser)");
-        Thread.sleep(5000);
+    public void postCondtions(){
+        //Close the browser
+        System.out.println("Quite the browser");
         BaseTest.driver.quit();
     }
 }
