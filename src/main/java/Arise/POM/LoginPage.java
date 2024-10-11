@@ -25,6 +25,8 @@ public class LoginPage {
     public LoginPage() {
         PageFactory.initElements(BaseTest.driver, this);
     }
+
+
     public void navigatesToLoginPage() {
         wait.until(ExpectedConditions.visibilityOf(btnPractice)).click();
         wait.until(ExpectedConditions.visibilityOf(btnLogin)).click();
