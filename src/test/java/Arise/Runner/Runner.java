@@ -11,7 +11,7 @@ import org.testng.annotations.*;
 @CucumberOptions(
         features = "src/test/java/Arise/Feature",
         glue = "Arise/StepDefination",
-        tags = "@nandkumar",
+        tags = "@login",
         monochrome = true
 )
 public class Runner extends AbstractTestNGCucumberTests {
