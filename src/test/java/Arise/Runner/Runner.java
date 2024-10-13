@@ -26,8 +26,9 @@ public class Runner extends AbstractTestNGCucumberTests {
     // Here feature file execution will happens it depends on cucumberOptions parameters
 
     @AfterClass
-    public void postCondtions(){
+    public void postCondtions() throws InterruptedException {
         //Close the browser
+        Thread.sleep(5000);
         System.out.println("Quite the browser");
         BaseTest.driver.quit();
     }
