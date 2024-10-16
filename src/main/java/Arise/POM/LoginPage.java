@@ -37,7 +37,8 @@ import java.time.*;
     }
 
     public void verifyTheResult(String textMessage){
-        String message = wait.until(ExpectedConditions.visibilityOf(txtMessage)).getText();
+        String message = wait.until(ExpectedConditions.visibilityOf(BaseTest.driver.findElement(By.xpath(
+                "(//*[text()='"+textMessage+"'])[1]")))).getText();
         Assert.assertEquals(message,textMessage);
     }
 }
