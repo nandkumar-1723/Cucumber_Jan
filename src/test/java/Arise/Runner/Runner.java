@@ -11,7 +11,8 @@ import org.testng.annotations.*;
 @CucumberOptions(
         features = "src/test/java/Arise/Feature",
         glue = "Arise/StepDefination",
-        tags = "@scenario_outline",
+        plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+        tags = "@login",
         monochrome = true
 )
 public class Runner extends AbstractTestNGCucumberTests {
