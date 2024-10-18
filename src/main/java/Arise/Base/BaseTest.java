@@ -18,6 +18,7 @@ public class BaseTest {
     public static void launchBrowser(){
         ChromeOptions chrome = new ChromeOptions();
         chrome.setBrowserVersion("stable");
+//        chrome.addArguments("headless");
         driver = new ChromeDriver(chrome);
         driver.get("https://practicetestautomation.com/practice-test-login/");
         driver.manage().window().maximize();
